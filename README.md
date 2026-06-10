@@ -1,7 +1,7 @@
 # Online Skill Learning for Web Agents via State-Grounded Dynamic Retrieval
 
 [![arXiv](https://img.shields.io/badge/arXiv-2606.04391-b31b1b.svg)](https://arxiv.org/pdf/2606.04391)
-[![License](https://img.shields.io/github/license/plusnli/skill-dynamic-retrieval)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/)
 
 Official implementation of [**Online Skill Learning for Web Agents via State-Grounded Dynamic Retrieval**](https://arxiv.org/pdf/2606.04391).
