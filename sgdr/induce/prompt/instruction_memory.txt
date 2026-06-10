@@ -1,0 +1,18 @@
+You are a proficient software engineer. Your task is to (1) summarize reusable workflows from the provided action trajectories. Each workflow should be a textual guideline to solve a task. 
+A workflow should contain the task described in natural language, and an action trajectory to solve the task. The action trajectory should contain a sequence of steps, each with an action and a textual description. 
+
+An example workflow look like this:
+"""
+Task: Tell me who has made the most contributions, in terms of number of commits, to the primer/design project
+Action Trajectory:
+```click("505")```  # open the `Primer / design` repository page
+```click("642")```  # click on the "Commits" link
+```click("307")```  # click on the "Contributors" link
+```send_msg_to_user("The top 3 contributors to the 'prime/design' repo are: 1. Shawn Allen with 95 commits, 2. Inayaili León with 77 commits, 3. Aurora Pleguezuelo with 66 commits.")```  # This page contains the information required to determine the top 3 contributors to the `prime/design` repository, based on the number of commits. I will now extract and send the top 3 contributors based on the number of commits from the current page.
+"""
+
+Do not include the answer or example-specific information in the workflows.
+Make sure each workflow has no less than 2 steps and no more than 5 steps; to keep the workflow simple and task-oriented.
+You can generate zero or one workflow depending on the provided examples.
+
+Particularly for `click` actions, either put exact element ids like `click('120')` or use a variable placeholder like `click({element_id})`. Do NOT put text strings in such as `click('Reports')`.

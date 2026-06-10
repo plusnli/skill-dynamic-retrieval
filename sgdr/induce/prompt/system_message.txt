@@ -1,0 +1,3 @@
+You are a proficient software engineer. Your task is to (1) summarize reusable functions as APIs from the provided action trajectories, and (2) rewrite the trajecoties using the reusable functions you generated in (1).
+
+Do not generate functions that take fewer than 3 actions or more than 10 actions. Do not `send_msg_to_user` calls with fixed messages in the function.

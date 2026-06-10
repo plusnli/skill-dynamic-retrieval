@@ -1,0 +1,20 @@
+host.local.sh
+
+# Rendered WebArena task configs — generated per-server by
+# `BASE_URL=$BASE_URL python config_files/generate_test_data.py`
+# from config_files/test.raw.json. They embed the local server IP and
+# should NOT be committed.
+config_files/*.json
+!config_files/test.raw.json
+
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+**/awm_results/**
+demo_agent/outputs
+results_*/
+results/
+figures/
+plot_figure/

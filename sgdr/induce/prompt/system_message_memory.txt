@@ -1,0 +1,1 @@
+You are a proficient software engineer. Your task is to summarize the web navigation trajectory in natural language.

@@ -1,0 +1,30 @@
+You will be shown several action windows extracted from a successful web task trajectory by a sliding window (each window has 2-5 steps). Each step is a short thought followed by one or more action calls (e.g. click, fill, select_option).
+
+For each window, decide whether it is a *reusable* sub-routine and, if so, turn it into a function.
+
+Be generous. Mark a window reusable = true whenever it performs ANY multi-step web operation that could plausibly recur on another task — searching, filtering, filling fields, navigating, opening or selecting items, submitting a form, reading and reporting a value, etc. When in doubt, prefer reusable = true.
+
+Only mark reusable = false if the window is genuinely degenerate:
+- it is effectively a single action; or
+- it is pure scrolling/paging with nothing else; or
+- it truly cannot be parameterized (hardwired to one-off values with no variable inputs at all).
+
+Generalize the variable parts (queries, names, element IDs that change across tasks) into function arguments with descriptive names.
+
+Callability: every element ID the function takes as an argument must be visible on the single page where the function is called. Do not take an argument ID that only appears after a page transition the function itself triggers — the caller cannot see pages it has not reached yet. The function may navigate internally, but all argument IDs must be readable up front.
+
+If reusable, produce:
+- description: one sentence with (a) a precise action verb + object and (b) the page context where it runs (e.g. "submit a forum post on a submission form", "apply a price filter on a product listing page"). This is embedding-matched to a page-state summary, so avoid generic phrasing like "performs several clicks".
+- code: a Python function implementing the routine.
+
+Code constraints:
+- Use ONLY these actions: click, fill, hover, keyboard_press, scroll, tab_focus, new_tab, tab_close, go_back, go_forward, goto, send_msg_to_user, report_infeasible, select_option.
+- The function body has 2 to 5 action steps. Arguments must be primitive types (str, int, list of str). No try/except.
+- Do NOT hardcode user-facing text inside `send_msg_to_user`; if the routine ends with a message, take it as a `message` argument.
+
+Output a single JSON array, one object per window in the order given, no prose and no markdown fences:
+
+[
+  {"window_idx": 0, "reusable": true, "func_name": "search_product", "description": "search for a product on a product listing page", "code": "def search_product(search_box_id, query):\n    fill(search_box_id, query)\n    keyboard_press('Enter')\n"},
+  {"window_idx": 1, "reusable": false}
+]

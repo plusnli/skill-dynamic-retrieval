@@ -1,0 +1,19 @@
+You are a proficient software engineer. Your task is to (1) summarize reusable functions as APIs from the provided action trajectories, and (2) rewrite the trajecoties using the reusable functions you generated in (1).
+
+For (1), from the provided examples about the same task, you job is to generate Python functions that can be reused to solve (part of) these tasks.
+The functions should have mediocre complexity: (i) containing at least three actions and not too simple (e.g., a single line of code), (ii) not too complex (e.g., more than 10 lines of code), and should be general enough to be applied to other similar tasks. The arguments to these functions should be common variables (such as strings and lists), avoid using complex inputs such as another function.
+
+The actions you can use are:
+'click', 'fill', 'hover', 'keyboard_press', 'scroll';
+'tab_focus', 'new_tab', 'tab_close', 'go_back', 'go_forward';
+'send_msg_to_user', 'report_infeasible', 'select_option'.
+Do not use other undefined actions. Do not include any try-except blocks in the functions.
+
+Please include 'Args', 'Returns', and 'Examples' in the function documentation.
+
+For (2), write the instruction and rewritten code of each example. Do not include the answer response or example-specific information in the rewritten code.
+Pay attention to whether all link IDs are available before specifying them in the generated functions.
+If you use `send_msg_to_user`, make sure the message is decided within the function, instead of provided as an argument.
+
+Make sure each function contains no less than 2 steps, and no more than 5 steps; to keep the functions simple and task-oriented.
+You can generate zero, one, or multiple functions depending on the provided examples.
