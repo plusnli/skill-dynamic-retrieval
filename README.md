@@ -1,8 +1,8 @@
 # Online Skill Learning for Web Agents via State-Grounded Dynamic Retrieval
 
-[![arXiv](https://img.shields.io/badge/arXiv-2606.04391-b31b1b.svg)](https://arxiv.org/pdf/2606.04391)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/)
+[arXiv](https://arxiv.org/pdf/2606.04391)
+[License: CC BY-SA 4.0](LICENSE)
+[Python 3.10](https://www.python.org/)
 
 This is the implementation of paper **[Online Skill Learning for Web Agents via State-Grounded Dynamic Retrieval](https://arxiv.org/pdf/2606.04391)**.
 
@@ -92,13 +92,13 @@ python run_online.py \
 The retained experiment choices are:
 
 ```text
-sgdr        State-grounded dynamic retrieval
-awm         Workflow-memory baseline
-asi         Action-skill induction baseline
-cer_online  CER-style online experience retrieval baseline
+sgdr        State-Grounded Dynamic Retrieval
+awm         Baseline: Agent Workflow Memory (AWM)
+asi         Baseline: Agent Skill Induction (ASI)
+cer_online  Baseline: Contextual Experience Replay (CER); Online version
 ```
 
-Allowed websites are `shopping`, `admin`, `reddit`, `gitlab`, and `map`.
+Allowed website domains are `shopping`, `admin`, `reddit`, `gitlab`, and `map`.
 
 ## SGDR Pipeline
 
@@ -183,8 +183,35 @@ sgdr/actions/_skill_lib/sgdr_{model}/
 
 ## License
 
-This project is released under the license specified in [LICENSE](LICENSE).
+This project is released under the **Creative Commons Attribution-ShareAlike 4.0
+International License (CC BY-SA 4.0)** — see [LICENSE](LICENSE). If you distribute a
+modified version, the ShareAlike condition requires you to release it under the same
+license and to credit the original authors.
+
+The repository contains code derived from two upstream projects, each with its own terms:
+
+| Path | Upstream | License |
+|---|---|---|
+| `sgdr/` | [ASI — Agent Skill Induction](https://github.com/zorazrw/agent-skill-induction) | CC BY-SA 4.0 |
+| `browsergym/` | [BrowserGym](https://github.com/ServiceNow/BrowserGym) v0.10.2, © ServiceNow | Apache-2.0 |
+
+`sgdr/` is a derivative work of ASI; because ASI is licensed under CC BY-SA 4.0, the
+ShareAlike condition requires this repository to carry the same license.
+
+`browsergym/` is a vendored **and modified** copy of BrowserGym. It stays under the
+Apache License 2.0 and is *not* relicensed — see [browsergym/LICENSE](browsergym/LICENSE)
+for the license text and [browsergym/NOTICE](browsergym/NOTICE) for the list of changes
+made to the original sources.
 
 ## Citation
 
-If you use this repository, please cite the paper linked above. BibTeX will be added when the final citation metadata is available.
+If you find this paper / repository helpful to your research, please consider citing it as follows:
+
+```bibtex
+@article{li2026online,
+  title={Online Skill Learning for Web Agents via State-Grounded Dynamic Retrieval},
+  author={Li, Jiaxi and Deng, Ke and Wang, Yun and Huang, Jingyuan and Shi, Yucheng and Tan, Qiaoyu and Lu, Jin and Liu, Ninghao},
+  journal={arXiv preprint arXiv:2606.04391},
+  year={2026}
+}
+```

@@ -1,0 +1,21 @@
+BrowserGym
+Copyright ServiceNow, Inc. and the BrowserGym contributors
+
+This directory contains a vendored copy of BrowserGym v0.10.2
+(https://github.com/ServiceNow/BrowserGym), licensed under the Apache License,
+Version 2.0. A copy of the license is provided in `browsergym/LICENSE`.
+
+Modifications
+-------------
+
+As required by Section 4(b) of the Apache License 2.0, the following changes
+have been made to the original BrowserGym sources in this repository:
+
+  * `experiments/src/browsergym/experiments/loop.py`
+    The call to `save_package_versions(self.exp_dir)` in `ExpArgs.run()` is
+    commented out, so per-task Python environment snapshots are no longer
+    written to the experiment directory.
+
+Everything in this directory remains licensed under the Apache License 2.0 and
+is not covered by the CC BY-SA 4.0 license that applies to the rest of this
+repository (see the top-level `LICENSE`).
