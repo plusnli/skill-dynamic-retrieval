@@ -1,8 +1,8 @@
 # Online Skill Learning for Web Agents via State-Grounded Dynamic Retrieval
 
-[arXiv](https://arxiv.org/pdf/2606.04391)
-[License: CC BY-SA 4.0](LICENSE)
-[Python 3.10](https://www.python.org/)
+[![arXiv](https://img.shields.io/badge/arXiv-2606.04391-b31b1b.svg)](https://arxiv.org/pdf/2606.04391)
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](LICENSE)
+[![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/)
 
 This is the implementation of paper **[Online Skill Learning for Web Agents via State-Grounded Dynamic Retrieval](https://arxiv.org/pdf/2606.04391)**.
 
@@ -121,7 +121,7 @@ At the start of a new SGDR run, an existing library for the same model and websi
 
 
 
-### Run all tasks of one website
+### 1. Run all tasks of one website
 
 `env.sh` defines the full task-ID list for each website as `TASK_IDS_SHOPPING`, `TASK_IDS_ADMIN`, `TASK_IDS_REDDIT`, `TASK_IDS_GITLAB`, and `TASK_IDS_MAP`, so a full-website run just passes the matching variable to `--task_ids`. 
 
@@ -156,7 +156,7 @@ python run_online.py \
 
 In vLLM mode, `LLM_MODEL_NAME` from `env.sh` overrides the CLI `--model` and `--eval_model` arguments, so the served model is always the one that is used.
 
-### Evaluate with environment reward
+### 2. Evaluate with environment reward
 
 WebArena ships its own programmatic evaluator for every task, and its verdict (`cum_reward > 0`) is the objective accuracy reported in the paper. This is the default `--metric env`:
 
