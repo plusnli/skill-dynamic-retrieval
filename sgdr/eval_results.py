@@ -73,10 +73,6 @@ def eval_task(result_dir: str, metric: str) -> bool | None:
         return env_result
     elif metric == "autoeval":
         return autoeval_result
-    elif metric == "either":
-        if env_result is None and autoeval_result is None:
-            return None
-        return bool(env_result) or bool(autoeval_result)
     else:
         raise ValueError(f"Unknown metric: {metric}")
 
@@ -143,8 +139,8 @@ if __name__ == "__main__":
                         choices=list(TASK_IDS.keys()), default=list(TASK_IDS.keys()),
                         help="Websites to evaluate (default: all).")
     parser.add_argument("--metric", type=str, default="env",
-                        choices=["env", "autoeval", "either"],
-                        help="env=cum_reward>0, autoeval=LLM-judge, either=union (default: env).")
+                        choices=["env", "autoeval"],
+                        help="env=cum_reward>0, autoeval=LLM-judge (default: env).")
     parser.add_argument("--subset", type=str, default="full",
                         choices=["full", "P10", "P30", "P50"],
                         help="Evaluate only the first 10/30/50%% of each website's "
