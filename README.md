@@ -1,8 +1,8 @@
 # Online Skill Learning for Web Agents via State-Grounded Dynamic Retrieval
 
-[arXiv](https://arxiv.org/pdf/2606.04391)
-[License: CC BY-SA 4.0](LICENSE)
-[Python 3.10](https://www.python.org/)
+[![arXiv](https://img.shields.io/badge/arXiv-2606.04391-b31b1b.svg)](https://arxiv.org/pdf/2606.04391)
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](LICENSE)
+[![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/)
 
 This is the implementation of paper **[Online Skill Learning for Web Agents via State-Grounded Dynamic Retrieval](https://arxiv.org/pdf/2606.04391)**.
 
