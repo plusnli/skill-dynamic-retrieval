@@ -1,12 +1,12 @@
 # Online Skill Learning for Web Agents via State-Grounded Dynamic Retrieval
 
-[arXiv](https://arxiv.org/pdf/2606.04391)
-[License: MIT](LICENSE)
-[Python 3.10](https://www.python.org/)
+[![arXiv](https://img.shields.io/badge/arXiv-2606.04391-b31b1b.svg)](https://arxiv.org/pdf/2606.04391)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/)
 
-This is an implementation of paper **[Online Skill Learning for Web Agents via State-Grounded Dynamic Retrieval](https://arxiv.org/pdf/2606.04391)**.
+This is the implementation of paper **[Online Skill Learning for Web Agents via State-Grounded Dynamic Retrieval](https://arxiv.org/pdf/2606.04391)**.
 
-This repository uses [WebArena](https://webarena.dev/og/) as the web agent environment, and you need to first install the docker environments from [https://github.com/web-arena-x/webarena/tree/main/environment_docker](https://github.com/web-arena-x/webarena/tree/main/environment_docker).
+This repository uses [WebArena](https://webarena.dev/og/) as the web agent environment. You will need to first install and configure the docker environments from [https://github.com/web-arena-x/webarena/tree/main/environment_docker](https://github.com/web-arena-x/webarena/tree/main/environment_docker).
 
 ## Repository Organization
 
@@ -46,15 +46,17 @@ cp host.local.example.sh host.local.sh
 # Edit host.local.sh and set WEBARENA_HOST to your WebArena host.
 ```
 
-`host.local.sh` is ignored by Git because it is machine-specific. Generated task configs under `config_files/*.json` are also ignored because they embed local service URLs.
+`host.local.sh` is ignored by Git because it is machine-specific. 
 
-Set your OpenAI-compatible API key in the shell or in a local ignored `.env` file:
+Generated task configs under `config_files/*.json` are also ignored because they embed local service URLs.
+
+Set your OpenAI API key in the shell or in a local ignored `.env` file:
 
 ```bash
 export OPENAI_API_KEY="your-api-key"
 ```
 
-Then load the runtime environment and generate WebArena task configs:
+Then load the runtime environment and generate WebArena task configs (dataset):
 
 ```bash
 source env.sh
