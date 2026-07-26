@@ -1,31 +1,25 @@
 # Online Skill Learning for Web Agents via State-Grounded Dynamic Retrieval
 
-[![arXiv](https://img.shields.io/badge/arXiv-2606.04391-b31b1b.svg)](https://arxiv.org/pdf/2606.04391)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/)
+[arXiv](https://arxiv.org/pdf/2606.04391)
+[License: MIT](LICENSE)
+[Python 3.10](https://www.python.org/)
 
-Official implementation of [**Online Skill Learning for Web Agents via State-Grounded Dynamic Retrieval**](https://arxiv.org/pdf/2606.04391).
+This is an implementation of paper **[Online Skill Learning for Web Agents via State-Grounded Dynamic Retrieval](https://arxiv.org/pdf/2606.04391)**.
 
-This repository provides **State-Grounded Dynamic Retrieval (SGDR)**, an online skill-learning method for WebArena-style web agents, together with retained baseline runners and evaluation utilities.
+This repository uses [WebArena](https://webarena.dev/og/) as the web agent environment, and you need to first install the docker environments from [https://github.com/web-arena-x/webarena/tree/main/environment_docker](https://github.com/web-arena-x/webarena/tree/main/environment_docker).
 
-SGDR maintains a growing JSONL library of reusable skills. During task solving, the agent summarizes the current browser state, retrieves skills that are relevant to both the task goal and the current state, and dynamically injects the selected skills into the action space. After a successful trajectory, SGDR cleans the trace, identifies reusable action windows, synthesizes new skills, and appends them to the skill library for future tasks.
-
-## Paper
-
-- Paper: [arXiv:2606.04391](https://arxiv.org/pdf/2606.04391)
-
-## Repository Layout
+## Repository Organization
 
 ```text
 skill-dynamic-retrieval/
   browsergym/          BrowserGym/WebArena dependencies used by the project
-  sgdr/                SGDR agent, retrieval, induction, and evaluation code
+  sgdr/                Main Program: State-Grounded Dynamic Retrieval (SGDR)
     actions/           Base action sets and learned skill libraries
     autoeval/          Trajectory evaluation utilities
     config_files/      WebArena task configuration template and generator
     induce/            Skill induction pipelines
-    retrieval/         State summarization, embedding, and skill retrieval
-    workflows/         Workflow-memory files for AWM-style baselines
+    retrieval/         Skill retrieval
+    workflows/         Workflow-memory files for baseline AWM
 ```
 
 Most project commands should be run from `skill-dynamic-retrieval/sgdr/`.
@@ -66,6 +60,8 @@ Then load the runtime environment and generate WebArena task configs:
 source env.sh
 python config_files/generate_test_data.py
 ```
+
+
 
 ## Quick Start
 
@@ -180,6 +176,8 @@ sgdr/actions/_skill_lib/sgdr_{model}/
 - WebArena services should be reset between large model comparisons to avoid state carryover.
 - Commercial backends may incur API costs for agent calls, induction, autoeval, and some WebArena built-in evaluators.
 - Do not commit local host files, generated task configs, result directories, or API keys.
+
+
 
 ## License
 

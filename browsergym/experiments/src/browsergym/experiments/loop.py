@@ -198,7 +198,7 @@ class ExpArgs:
         self._set_logger()
 
         # log python environment info
-        save_package_versions(self.exp_dir)
+        # save_package_versions(self.exp_dir)
 
         episode_info = []
         env, step_info, err_msg, stack_trace = None, None, None, None

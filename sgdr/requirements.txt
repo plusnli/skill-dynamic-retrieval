@@ -4,3 +4,11 @@ torch
 transformers
 sentence-transformers
 einops
+vllm
+litellm
+numpy
+Pillow
+beautifulsoup4
+requests
+tqdm
+pyparsing
